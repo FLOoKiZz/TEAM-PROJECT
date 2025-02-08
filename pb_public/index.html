@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Auth Test Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-800 font-sans">
+    <div class="min-h-screen flex flex-col justify-center items-center">
+      <div class="bg-white shadow-md rounded-lg p-6 w-80">
+        <h1 class="text-xl font-bold text-center mb-4">Auth Test Page</h1>
+        <div class="text-center text-sm text-gray-600 mb-6">
+          Welcome to the home page
+        </div>
+        <div class="space-y-4">
+          <button 
+            onclick="logout()" 
+            class="w-full bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded focus:outline-none focus:ring focus:ring-red-300">
+            LOGOUT
+          </button>
+          <button 
+            onclick="window.location.href='article.html'" 
+            class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-300">
+            ARTICLES
+          </button>
+          <button 
+            onclick="window.location.href='p_chat.html'" 
+            class="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded focus:outline-none focus:ring focus:ring-green-300">
+            CHAT
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      if (localStorage.getItem('authToken') === null) {
+        window.location.href = 'login.html';
+      }
+
+      function logout() {
+        localStorage.removeItem('authToken');
+        localStorage.removeItem('userId');
+        window.location.href = 'login.html';
+      }
+    </script>
+  </body>
+</html>
