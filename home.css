@@ -113,9 +113,8 @@ body {
 .cta-back:hover {
     background: #0056b3;
 }
-
-/* Services Section */
 #services {
+    perspective: 1000px;
     background-color: var(--secondary-color);
     width: 100%;
     max-width: 1200px;
@@ -140,16 +139,13 @@ body {
     border-radius: 10px;
     padding: 20px;
     transform-style: preserve-3d ;
-    transition: all 1.5s ease;
+    transition: all 2s ease;
     
 
 }
-
 .dev:hover {
     transform: rotateY(180deg);
 }
-
-/* Buttons */
 .back  .front {
     position: absolute;
     width: 100%;
@@ -159,25 +155,17 @@ body {
     align-items: center;
     text-align: center;
     border-radius: 10px;
-
-
 }
 .front {
     color: white;
     backface-visibility: hidden;
-
-
 }
 .back {
     background: var(--secondary-color);
     color: white;
     transform: rotateY(180deg);
     backface-visibility: hidden;
-
-    
-
 }
-
 #desc {
     background-color: white;
     color: var(--primary-color);
@@ -186,7 +174,6 @@ body {
     margin-top: 10px;
 }
 
-/* About & Contact Sections */
 #about, #contact {
     width: 100%;
     max-width: 1200px;
